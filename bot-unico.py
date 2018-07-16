@@ -1,4 +1,4 @@
-﻿import tweepy
+import tweepy
 import re
 import random
 
@@ -25,9 +25,10 @@ class MyStreamListener(tweepy.StreamListener):
                     variacion.append('Sí corazón, ' +  matched.groups()[0])
                     variacion.append('Sí. ' +  matched.groups()[0].title())
                     reply = '{4} únic{2}. https://twitter.com/{0}/status/{3}'.format(status.user.screen_name,
-                                                                                                              matched.groups()[0],
-                                                                                                              matched.groups()[2],
-                                                                                                              status.id, random.choice (variacion))
+                                                                                     matched.groups()[0],
+                                                                                     matched.groups()[2].lower(),
+                                                                                     status.id,
+                                                                                     random.choice (variacion))
                     api.update_status(status=reply, in_reply_to_status_id=status.id)
 
 myStreamListener = MyStreamListener()
