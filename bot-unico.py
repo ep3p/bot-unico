@@ -22,10 +22,10 @@ class MyStreamListener(tweepy.StreamListener):
                 articulo = matched.groups()[0]
                 genero = matched.groups()[2].lower()
                 variacion = []
-                variacion.append('Sí, eres {} únic{}.'.format(articulo, genero))
-                variacion.append('Sí cariño, {} únic{}.'.format(articulo, genero))
-                variacion.append('Sí corazón, {} únic{}.'.format(articulo, genero))
-                variacion.append('Sí. {} únic{}.'.format(articulo.title(), genero))
+                variacion.append('Sí, eres {0} únic{1}.'.format(articulo, genero))
+                variacion.append('Sí cariño, {0} únic{1}.'.format(articulo, genero))
+                variacion.append('Sí corazón, {0} únic{1}.'.format(articulo, genero))
+                variacion.append('Sí. {0} únic{1}.'.format(articulo.title(), genero))
                 reply = '{0} https://twitter.com/{1}/status/{2}'.format(random.choice(variacion),                                                                            
                                                                         status.user.screen_name,
                                                                         status.id)
